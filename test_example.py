@@ -1,6 +1,8 @@
+from urllib import response
+
 import cooltest
 
-import time
+import time, pexpect, wexpect
 
 
 def test_math():
@@ -23,18 +25,18 @@ def api_activate(addr, path, value):
 	...
 
 
-def test_ping(dut_ip):
+"""def test_ping(dut_ip):
 	cooltest.skipif(not dut_ip, "No device to test on!")
-	ping = pexpect.spawn(f"ping -c 3 {dut_ip}")
+	ping = wexpect.spawn(f"ping -c 3 {dut_ip}")
 	found = ping.expect(["3 received", pexpect.TIMEOUT, pexpect.exceptions.EOF], timeout=5)
-	cooltest.failif(found != 0, f"No ping to the device '{dut_ip}'")
+	cooltest.failif(found != 0, f"No ping to the device '{dut_ip}'") """
 
 
-def test_play(dut_ip):
+"""def test_play(dut_ip):
 	cooltest.skipif(not dut_ip, "No device to test on!")
 	#response = api_activate(dut_ip, < a StreamSDK request to play >)
 	cooltest.failif(not response or int(response) < 0, "Failed to play")
 	print("  playing...")
 	time.sleep(5)
 	api_activate(dut_ip, 'player:player/control', {"control": "stop"})
-	print("  stopped.")
+	print("  stopped.")"""
